@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from models.game import Game
+from models.game import *
 from models.player import Player
 
 @app.route('/home')
@@ -9,13 +9,17 @@ def index():
     
 @app.route('/playgame')
 def play_game():
-    return render_template('play_game.html')
+    return render_template('play_game.html', title='Play rock papaer scissors!')
 
 
 @app.route('/<player_1_choice>/<player_2_choice>')
-def result():
+def result(player_1_choice, player_2_choice):
     player_1 = Player("player_1", player_1_choice)
     player_2 = Player("player_2", player_2_choice)
     game = Game(player_1, player_2)
     winner = game
-    return render_template('result.html', winner=winner)
+    if winner == None:
+        winner = "Nobody! It was a draw!"
+
+    return render_template('result.html', winner=winner, player_1_choice=player_1_choice,
+                           player_2_choice=player_2_choice, title="and the winner is...")

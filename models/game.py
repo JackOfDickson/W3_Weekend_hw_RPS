@@ -7,24 +7,24 @@ class Game():
     def game_result(self):
         if self.player_1.choice == "rock":
             if self.player_2.choice == "paper":
-                return self.player_2
+                return self.player_2.name
             if self.player_2.choice == "scissors":
-                return self.player_1
+                return self.player_1.name
             if self.player_2.choice == "rock":
                 return None
 
         if self.player_1.choice == "paper":
             if self.player_2.choice == "rock":
-                return self.player_1
+                return self.player_1.name
             if self.player_2.choice == "scissors":
-                return self.player_2
+                return self.player_2.name
             if self.player_2.choice == "paper":
                 return None
         
         if self.player_1.choice == "scissors":
             if self.player_2.choice == "rock":
-                return self.player_2
+                return self.player_2.name
             if self.player_2.choice == "paper":
-                return self.player_1
+                return self.player_1.name
             if self.player_1.choice == "scissors":
                 return None
