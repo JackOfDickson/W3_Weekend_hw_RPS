@@ -17,7 +17,7 @@ def result(player_1_choice, player_2_choice):
     player_1 = Player("player_1", player_1_choice)
     player_2 = Player("player_2", player_2_choice)
     game = Game(player_1, player_2)
-    winner = game
+    winner = game.game_result().name
     if winner == None:
         winner = "Nobody! It was a draw!"
 
