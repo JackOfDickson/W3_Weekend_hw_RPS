@@ -14,12 +14,12 @@ def play_game():
 
 @app.route('/<player_1_choice>/<player_2_choice>')
 def result(player_1_choice, player_2_choice):
-    player_1 = Player("player_1", player_1_choice)
-    player_2 = Player("player_2", player_2_choice)
+    player_1 = Player("Player 1", player_1_choice)
+    player_2 = Player("Player 2", player_2_choice)
     game = Game(player_1, player_2)
     winner = game.game_result().name
     if winner == None:
         winner = "Nobody! It was a draw!"
 
-    return render_template('result.html', winner=winner, player_1_choice=player_1_choice,
-                           player_2_choice=player_2_choice, title="and the winner is...")
+    return render_template('result.html', winner=winner, player_1=player_1,
+                           player_2=player_2, title="and the winner is...")
