@@ -1,12 +1,19 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
     </head>
     <body>
+        <div class="header-container">
         <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/playgame"> Play rock paper scissors</a>
+            <div class="home">
+            <li class="header"><a href="/home">Home</a></li>
+            </div>
+            <div class="play-game">
+            <li class="header"><a href="/playgame"> Play rock paper scissors</a></li>
+            </div>
         </ul>
+        </div>
     <hr>
     {% block content %}
 
