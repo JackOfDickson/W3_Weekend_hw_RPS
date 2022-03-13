@@ -9,7 +9,12 @@ def index():
     
 @app.route('/playgame')
 def play_game():
-    return render_template('play_game.html', title='Play rock papaer scissors!')
+    return render_template('play_game.html', player_1='Player 1', title='Play rock papaer scissors!')
+
+@app.route('/<player_1_choice>/player2turn')
+def player2turn(player_1_choice):
+    player_1 = Player("Player 1", player_1_choice)
+    return render_template('player2.html', player_2="Player 2")
 
 
 @app.route('/<player_1_choice>/<player_2_choice>')
