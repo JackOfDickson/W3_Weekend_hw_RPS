@@ -4,16 +4,12 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
     </head>
     <body>
-        <div class="header-container">
-        <ul>
-            <div class="home">
-            <li class="header"><a href="/home">Home</a></li>
-            </div>
-            <div class="play-game">
-            <li class="header"><a href="/playgame"> Play rock paper scissors</a></li>
-            </div>
-        </ul>
-        </div>
+        <ul class="container">
+            <li class="header home"><a href="/home">Home</a></li>
+            
+            <li class="header play-game"><a href="/playgame"> Play rock paper scissors</a></li>
+            
+        </ul class="container">
     <hr>
     {% block content %}
 

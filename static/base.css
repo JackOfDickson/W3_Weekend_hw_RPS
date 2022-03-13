@@ -4,20 +4,17 @@ body {
     text-align: center;
 }
 .home {
-    grid-area: home;
     list-style: none
 }
 
 .play-game {
-    grid-area: play;
     list-style: none
 }
-.header-container {
-    display: grid;
-    grid-template-columns: 2fr 2fr 9fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "home home play";
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
 }
 
 .list {
